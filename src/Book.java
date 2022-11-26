@@ -21,3 +21,4 @@ public class Book {
         this.yearOfPublication = yearOfPublication;
     }
 }
+// by Igor
