@@ -1,25 +1,25 @@
 import java.util.Objects;
 
 public class Book {
-    private final String BOOKNAME;      //автор и название книги не меняется
+    private final String bookName;      //автор и название книги не меняется
     private int yearOfPublication;      //менятся лишь год издания, т.к. книга может быть переиздана
-    private final Author BOOKAUTHOR;
+    private final Author bookAuthor;
 
     public Book(String bookName, int yearOfPublication, Author bookAuthor) {
-        this.BOOKNAME = bookName;
+        this.bookName = bookName;
         this.yearOfPublication = yearOfPublication;
-        this.BOOKAUTHOR = bookAuthor;
+        this.bookAuthor = bookAuthor;
     }
 
     public String getBookName() {
-        return BOOKNAME;
+        return bookName;
     }
 
     public int getYearOfPublication() {
         return yearOfPublication;
     }
 
-    public Author getBOOKAUTHOR() { return BOOKAUTHOR; }
+    public Author getBOOKAUTHOR() { return bookAuthor; }
 
     public void setYearOfPublication(int yearOfPublication) {
         this.yearOfPublication = yearOfPublication;
@@ -27,7 +27,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return BOOKNAME + " " + yearOfPublication + " " + BOOKAUTHOR;
+        return bookName + " " + yearOfPublication + " " + bookAuthor;
     }
 
     @Override
@@ -38,12 +38,12 @@ public class Book {
             return false;
         }
         Book b = (Book) other;
-        return Objects.equals(b.BOOKNAME, BOOKNAME) && Objects.equals(b.BOOKAUTHOR, BOOKAUTHOR);
+        return Objects.equals(b.bookName, bookName) && Objects.equals(b.bookAuthor, bookAuthor) && Objects.equals(b.yearOfPublication, yearOfPublication);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(BOOKNAME, yearOfPublication, BOOKAUTHOR);
+        return Objects.hash(bookName, yearOfPublication, bookAuthor);
     }
 }
 // by Igor
